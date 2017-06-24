@@ -1,0 +1,42 @@
+* GuardGen
+  [[https://hex.pm/packages/guard_gen][file:https://img.shields.io/hexpm/v/guard_gen.svg?style=flat]] 
+  [[https://gitlab.com/muhifauzan/guard-gen/commits/master][file:https://gitlab.com/muhifauzan/guard-gen/badges/master/build.svg]] 
+
+  GuardGen provides macro that can be used as guard test to generate type-checks.
+* Installation
+  Add GuardGen to your list of dependencies in ~mix.exs~:
+
+  #+BEGIN_SRC elixir
+    def deps do
+      [{:guard_gen, "~> 0.1.0"}]
+    end
+  #+END_SRC
+
+  Then, update your dependencies.
+
+  #+BEGIN_SRC shell
+    $ mix deps.get
+  #+END_SRC
+* Usage
+  GuardGen provides macro that can be used as guard test to generates
+  type-checks.
+
+  #+BEGIN_SRC elixir
+    defmodule GuardTest do
+      import GuardGen
+
+      def test(arg) when is_valid(is_atom: arg) do
+        arg
+      end
+    end
+  #+END_SRC
+
+  List of supported type checks are listed in [[file:.guard-gen-test-support.org][here]].
+
+  For full documentation, please consult the [[https://hexdocs.pm/guard_gen/GuardGen.html][online documentation]].
+* Change Log
+  All changes are found in [[file:CHANGELOG.org][CHANGELOG]]
+* License
+  Information about license is found in [[file:LICENSE][LICENSE]]
+* Contributing
+  Guide to contributing is found in [[file:CONTRIBUTING.org][CONTRIBUTING]]

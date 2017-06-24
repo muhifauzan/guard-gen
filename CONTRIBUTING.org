@@ -1,0 +1,11 @@
+Use the [[https://github.com/muhifauzan/guard-gen/issues][issue tracker]] if you have any questions, bug reports, or feature
+requests. Open a [[https://github.com/muhifauzan/guard-gen/pulls][pull request]] when you are ready to contribute.
+
+When you make a pull request, when necessary, make sure to do these:
+
+- Write tests
+- Include ~@type~, ~@doc~, and ~@spec~
+- Try to match the style convention already resent
+- Write a good commit message
+
+Thank you for the help!
