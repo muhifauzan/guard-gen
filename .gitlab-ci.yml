@@ -20,14 +20,14 @@ build:
     - mix deps.get
     - mix compile --force --warnings-as-errors
 
-static-analysis-1:
+dialyzer:
   stage: static-analysis
   script:
     - mix dialyzer --halt-exit-status
   except:
     - tags
 
-static-analysis-2:
+credo:
   stage: static-analysis
   script:
     - mix credo
@@ -41,15 +41,15 @@ test:
   except:
     - tags
 
-publish:
+hex:
   stage: publish
   script:
     - mix hex.config username $HEX_USERNAME
     - mix hex.config encrypted_key $HEX_ENCRYPTED_KEY > /dev/null 2>&1
     - mix hex.build
-    - echo $HEX_PASSPHRASE$'\n'Y | mix hex.publish
+    - echo ${HEX_PASSPHRASE}$'\n'Y | mix hex.publish
   environment:
     name: hex
-    url: https://hex.pm/packages/guard/${CI_COMMIT_TAG#"v"}
+    url: https://hex.pm/packages/guard_gen/${CI_COMMIT_TAG#"v"}
   only:
     - tags
