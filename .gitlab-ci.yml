@@ -58,7 +58,6 @@ hex:
 inch:
   stage: publish
   script:
-    - git checkout -b $CI_COMMIT_REF_NAME
     - git remote set-url origin https://github.com/${REPO}.git
     - mix inch.report
   environment:
