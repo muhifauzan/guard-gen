@@ -1,6 +1,7 @@
 * GuardGen
-  [[https://hex.pm/packages/guard_gen][file:https://img.shields.io/hexpm/v/guard_gen.svg?style=flat]] 
   [[https://gitlab.com/muhifauzan/guard-gen/commits/master][file:https://gitlab.com/muhifauzan/guard-gen/badges/master/build.svg]] 
+  [[https://inch-ci.org/github/muhifauzan/guard-gen?branch=master][file:https://inch-ci.org/github/muhifauzan/guard-gen.svg?branch=master]] 
+  [[https://hex.pm/packages/guard_gen][file:https://img.shields.io/hexpm/v/guard_gen.svg?style=flat]] 
 
   GuardGen provides macro that can be used as guard test to generate type-checks.
 * Installation

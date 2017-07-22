@@ -41,6 +41,9 @@ defmodule GuardGen.Mixfile do
 
       # Docs
       {:ex_doc, "~> 0.14", only: [:dev, :test], runtime: false},
+
+      # Optional
+      {:inch_ex, "~> 0.5", only: [:dev, :test], optional: true},
     ]
   end
 
