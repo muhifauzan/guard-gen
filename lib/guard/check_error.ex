@@ -1,4 +1,6 @@
 defmodule GuardGen.CheckError do
+  @moduledoc false
+
   defexception args: nil, arity: nil, check: nil
 
   def message(%__MODULE__{args: args, arity: arity, check: check}) do
