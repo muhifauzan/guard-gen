@@ -14,9 +14,9 @@ defmodule GuardGen do
 
   @type checklist :: keyword
 
-  @keys Application.get_env(:guard_gen, :ori_keys)
-  @ori_keys @keys -- [:is_list, :in]
-  @mod_keys Application.get_env(:guard_gen, :mod_keys)
+  @keys Application.get_env(:guard_gen, :original_keys)
+  @original_keys @keys -- [:is_list, :in]
+  @modified_keys Application.get_env(:guard_gen, :modified_keys)
 
   @doc """
   Returns true if all type-checks evaluation are true. All type-checks provided
@@ -116,11 +116,11 @@ defmodule GuardGen do
     checks_ast(tail, check_ast(:and, ast, check_ast(atom, hd, tl)))
   end
   defp checks_ast([{atom, arg} | tail], ast)
-  when atom in @ori_keys do
+  when atom in @original_keys do
     checks_ast(tail, check_ast(:and, ast, check_ast(atom, arg)))
   end
   defp checks_ast([{atom, args} | tail], ast)
-  when atom in @mod_keys and is_list(args) and length(args) >= 1 do
+  when atom in @modified_keys and is_list(args) and length(args) >= 1 do
     atom = plural_to_singular_key(atom)
 
     checks_ast(tail,

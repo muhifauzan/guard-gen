@@ -30,12 +30,12 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 
 config :guard_gen,
-  ori_keys: [
+  original_keys: [
     :is_atom, :is_binary, :is_bitstring, :is_boolean, :is_float, :is_function,
     :is_integer, :is_list, :is_map, :is_nil, :is_number, :is_pid, :is_port,
     :is_reference, :is_tuple, :in
   ],
-  mod_keys: [
+  modified_keys: [
     :are_atoms, :are_binaries, :are_bitstrings, :are_booleans, :are_floats,
     :are_functions, :are_integers, :are_lists, :are_maps, :are_nils,
     :are_numbers, :are_pids, :are_ports, :are_references, :are_tuples, :ins
